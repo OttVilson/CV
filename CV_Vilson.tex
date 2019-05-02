@@ -1,0 +1,546 @@
+\documentclass[12pt,ngerman,english]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% vajalikud selleks, et PDF-ist saaks copy-pastet kasutades täpitähti jne. kopeerida
+
+\usepackage{nopageno}
+
+\usepackage{fontawesome} % for house icon in the aadress
+\usepackage{forloop}
+\usepackage{calc} % widthof(sõne)
+\usepackage[autostyle]{csquotes}
+\usepackage{babel} % jutumärgid https://tex.stackexchange.com/questions/281279/style-of-quotation-marks; https://keeleabi.eki.ee/?leht=8&id=270
+\usepackage{amsmath,fixmath,bm,mathtools,esint,eufrak,graphicx,multicol}
+\usepackage{xcolor}
+
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref} % ocgcolorlinks,
+\usepackage[open,openlevel=2]{bookmark}
+
+\hypersetup{pdftitle=Ott Vilson - Curriculum Vitae,pdfstartview = FitH, pdftoolbar=false, pdfmenubar=true}
+
+\usepackage{geometry}
+\geometry{
+	% A4 jaoks
+	paper = a4paper,
+%	textwidth = 125mm,
+%	textheight = 200mm,
+	top=20mm,
+	left=15mm,
+	right=20mm,
+	bottom=20mm,
+%	footskip=15mm,
+%	showframe=true
+}
+
+%% preamble
+\title{Curriculum Vitae}
+
+\date{}
+
+\def\Estonian{1}
+\def\English{2}
+	
+\def\Language{\English} % \Estonian \English
+
+\newcommand\ifEst[1]{\if\Language\Estonian{}#1{}\fi}
+\newcommand\ifEng[1]{\if\Language\English{}#1{}\fi}
+\newcommand\sertifikaat[1]{%
+	{\hypersetup{urlcolor=diplomaColor}%
+	[#1] %
+	}%
+}
+
+\include{Jaotused/Isiklik}
+\include{Jaotused/Pikkused}
+\include{Jaotused/Haridus}
+\include{Jaotused/Taiendkoolitus}
+\include{Jaotused/Too}
+\include{Jaotused/Keeled}
+\include{Jaotused/Arvutioskus}
+\include{Jaotused/Programmeerimine}
+\include{Jaotused/Lisaks}
+\include{Jaotused/Teaduslik/Profiilid}
+\include{Jaotused/Teaduslik/Artiklid}
+\include{Jaotused/Teaduslik/Ettekanded}
+\include{Jaotused/Teaduslik/Postrid}
+\include{Jaotused/Teaduslik/Retsensioonid}
+\include{Jaotused/Teaduslik/Opetamine}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%5
+%
+%  Colors
+\colorlet{diplomaColor}{teal}
+\colorlet{ETIScolor}{green}
+\colorlet{arXivcolor}{magenta}
+\colorlet{inSPIREcolor}{cyan}
+
+\begin{document}
+
+\ifEst{%
+\selectlanguage{ngerman}%
+}
+	
+\begin{center}
+	\Huge\textbf{Curriculum Vitae}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection
+\label{personal}
+
+\def\personal{\ifEst{Isiklik informatsioon}\ifEng{Personal information}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[personal]{\personal}}{\personal}}
+
+\noindent\begin{minipage}[b]{0.6\textwidth}
+	{\large\textbf{\personal:}}
+	\vspace{0.2cm}
+	
+	\begin{tabular}{p{\veerg}l}
+%		\nimi \\
+%		\sunniaeg \\
+%		\aadress \\
+%		\telefon \\
+%		\email \\
+%		\skype \\
+%		\linkedin \\
+%		\twitter
+	\end{tabular}
+
+% tühi rida
+\hphantom{tuhi}\vspace{-0.4\joontevahe}
+
+\end{minipage}%
+%
+\begin{minipage}[b]{0.32\textwidth}
+	\hfill\includegraphics[scale=1]{Ott_Vilson}
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{0.7cm}
+
+\phantomsection 
+\label{education}
+
+\def\education{\ifEst{Haridusk\"aik}\ifEng{Education}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[education]{\education}}{\education}}
+
+\noindent\begin{minipage}{\textwidth}
+	{\large\textbf{\education:}}
+	\vspace{0.2cm}
+	
+	\fontsize{12}{12}\selectfont
+	\begin{tabular}{p{\veerg}l}
+	\doktorantuur \\[0.3cm]
+		%
+	\magistrantuur \\[0.3cm]
+		%
+	\eller \\[0.3cm]
+		%
+	\bakalaureus \\[0.3cm]
+		%
+	\keskkool \\[0.3cm]
+		%
+	\pohikool
+	\end{tabular}
+\end{minipage}
+%\fontsize{12}{1.2}\selectfont
+
+\vspace{0.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection
+\label{furtherEducation}
+
+\def\furthereducation{\ifEst{T\"aiendkoolitus}\ifEng{Further education}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[furtherEducation]{\furthereducation}}{\furthereducation}}
+
+\noindent\begin{minipage}{\textwidth}
+	{\large\textbf{\furthereducation:}}
+	\vspace{0.2cm}
+	
+	\begin{tabular}{p{\veerg}l}
+%		\courserakaks \\
+		%
+%		\courserauks \\
+		%
+%		\rstuks \\
+		%
+%		\Iisrael 
+	\end{tabular}
+\end{minipage}
+
+\vspace{0.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection \hypertarget{work}{}
+
+\def\work{\ifEst{T\"o\"okogemus}\ifEng{Work experience}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[work]{\work}}{\work}}
+
+\noindent\begin{minipage}{\textwidth}
+	{\large\textbf{\work:}}
+	\vspace{0.2cm}
+	
+	\begin{tabular}{p{\veerg}l}
+%		\UTuks \\
+		%
+%		\LSKO \\
+		%
+%		\Aida \\
+		%
+%		\trubaduur \\
+		%
+%		\huppajad \\
+	\end{tabular}
+\end{minipage}
+
+\vspace{0.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection
+\label{languages}
+
+\def\languages{\ifEst{Keelteoskus}\ifEng{Languages}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[languages]{\languages}}{\languages}}
+
+\noindent\begin{minipage}{\textwidth}
+	{\large\textbf{\languages:}}
+	\vspace{0.2cm}
+	
+	\begin{tabular}{p{\veerg}l}
+%		\eesti \\
+		%
+%		\inglise \\
+		%
+%		\vene
+	\end{tabular}
+\end{minipage}
+
+\vspace{0.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection \hypertarget{computer}{}
+
+\def\computer{\ifEst{Arvutioskus}\ifEng{Computer usage}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[computer]{\computer}}{\computer}}
+
+\noindent\begin{minipage}{\textwidth}
+	{\large\textbf{\computer:}}
+	\vspace{0.2cm}
+	
+	\begin{tabular}{p{\veerg}l}
+%		\igapaevaselt \\[0.1cm]
+		%
+%		\kasutan
+	\end{tabular}
+\end{minipage}
+
+\vspace{0.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection
+\label{programmingLanguages}
+
+\def\programmingLanguages{\ifEst{Programmeerimiskeeled}\ifEng{Programming languages}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[programmingLanguages]{\programmingLanguages}}{\programmingLanguages}}
+
+\noindent\begin{minipage}{\textwidth}
+	{\large\textbf{\programmingLanguages:}}
+	\vspace{0.2cm}
+
+	\begin{tabular}{p{\veerg}l}
+%	\kesktase \\
+	%
+%	\algtase
+\end{tabular} 
+\end{minipage}
+
+\vspace{0.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection
+\label{additional}
+
+\def\additional{\ifEst{T\"aiendav info}\ifEng{Additional info}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[additional]{\additional}}{\additional}}
+
+\noindent\begin{minipage}{\textwidth}
+	{\large\textbf{\additional:}}
+	\vspace{0.2cm}
+	
+	\begin{tabular}{p{\veerg}p{12cm}}
+%	\auto \\[0.1cm]
+	%
+%	\vabatahtlik	
+	\end{tabular}
+\end{minipage}
+
+\vspace{1.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection 
+\label{science}
+
+\def\science{\ifEst{Teaduslik tegevus}\ifEng{Academic work}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[science]{\science}}{\science}}
+
+\noindent{\LARGE\textbf{\science}}
+\vspace{0.3cm}
+
+\profiilid
+
+\vspace{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection 
+\label{publications}
+
+\def\publications{\ifEst{Publikatsioonid}\ifEng{Publications}}
+\addcontentsline{toc}{subsection}{\texorpdfstring{\hyperref[publications]{\publications}}{\publications}}
+	
+	\noindent{\large{\textbf{\publications}}}\footnote{%
+		\ifEst{Teoreetilise f\"u\"usika publikatsioonidel on tavap\"araselt autorid t\"ahestikulises j\"arjekorras, v\"alja arvatud juhul, kui tegemist on ettekandele j\"argneva artikliga, millisel puhul esineja nimi on esimene.}%
+		\ifEng{In theoretical physics, it is a custom that authors are listed alphabetically, except in case of a conference proceeding, as then the one who gave the talk is the first author.}%
+	}
+	\vspace{0.2cm}
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\fontsize{12}{12}\selectfont
+
+	\newcounter{loop}	
+
+	\forloop{loop}{\artikliteArv}{\value{loop}>0}{%
+%		\if\arabic{loop}8\par\pagebreak\fi
+		\kuvaArtikkel{\arabic{loop}}%
+		\vspace{0.2cm}%
+		\pagebreak[0]%
+		\addtocounter{loop}{-2}%
+	}
+	
+	\vspace{0.6cm}
+
+\fontsize{12}{\joontevahe}\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\phantomsection
+\label{talks}
+
+\def\talks{\ifEst{Suulised ettekanded}\ifEng{Oral presentations}}
+\addcontentsline{toc}{subsection}{\texorpdfstring{\hyperref[talks]{\talks}}{\talks}}
+
+\noindent{\large{\textbf{\talks}}}
+
+\vspace{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\fontsize{12}{12}\selectfont
+	
+	\forloop{loop}{\ettekanneteArv}{\value{loop}>0}{%
+		\kuvaEttekanne{\arabic{loop}}%
+		\addtocounter{loop}{-2}%
+		\vspace{0.2cm}%
+	}
+
+\vspace{0.5cm}
+
+\fontsize{12}{\joontevahe}\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\phantomsection
+\label{posters}
+
+\def\posters{\ifEst{Posterettekanded}\ifEng{Poster presentations}}
+\addcontentsline{toc}{subsection}{\texorpdfstring{\hyperref[posters]{\posters}}{\posters}}
+
+
+\noindent{\large{\textbf{\posters}}}
+\vspace{0.2cm}
+
+\fontsize{12}{12}\selectfont
+
+	\forloop{loop}{\postriteArv}{\value{loop}>0}{%
+		\kuvaPoster{1}%
+		\addtocounter{loop}{-2}%
+		\vspace{0.2cm}%
+	}
+
+\vspace{0.5cm}
+
+\fontsize{12}{\joontevahe}\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection
+\label{referee}
+
+\def\referee{\ifEst{Retsenseerimised}\ifEng{Referencing}}
+\addcontentsline{toc}{subsection}{\texorpdfstring{\hyperref[referee]{\referee}}{\referee}}
+
+
+\noindent{\large{\textbf{\referee}}}
+\vspace{0.2cm}
+
+\fontsize{12}{12}\selectfont
+
+%	\setcounter{viimaneRetsensiooniLehekulg}{\thepage}
+
+	\forloop{loop}{\retsensioonideArv}{\value{loop}>0}{%
+		\kuvaRetsensioon{\arabic{loop}}%
+		\addtocounter{loop}{-2}%
+		\vspace{0.2cm}%		
+	}
+
+\fontsize{12}{\joontevahe}\selectfont
+
+\vspace{0.5cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\phantomsection \hypertarget{teaching}{}
+
+\def\teaching{\ifEst{\~Opetamine}\ifEng{Teaching}}
+\addcontentsline{toc}{subsection}{\texorpdfstring{\hyperref[teaching]{\teaching}}{\teaching}}
+
+
+\noindent{\large{\textbf{\teaching}}}
+\vspace{0.2cm}
+
+\fontsize{12}{12}\selectfont
+
+	\forloop{loop}{\opetamisteArv}{\value{loop}>0}{%
+		\kuvaOpetamine{\arabic{loop}}%
+		\addtocounter{loop}{-2}%
+		\vspace{0.2cm}
+	}
+
+\fontsize{12}{\joontevahe}\selectfont
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+
+\phantomsection 
+
+\ifEst{{\LARGE\textbf{Lisad}}}\ifEng{{\LARGE\textbf{Appendixes}}}
+
+\hypertarget{appendix}{}
+
+\def\appendixes{\ifEst{Lisad}\ifEng{Appendixes}}
+\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[appendix]{\appendixes}}{\appendixes}}
+
+\vspace{0.4cm}
+
+\phantomsection 
+
+\ifEst{{\Large\textbf{Koolid}}}\ifEng{{\Large\textbf{Schools}}}
+
+\hypertarget{school}{}
+
+\def\schools{\ifEst{Koolid}\ifEng{Schools}}
+\addcontentsline{toc}{subsection}{\texorpdfstring{\hyperref[school]{\schools}}{\schools}}
+
+\vspace{0.2cm}
+
+\begin{minipage}[b][4.5cm][t]{0.5\textwidth}
+\phantomsection 
+
+\hypertarget{Reinik}{}
+
+\ifEst{{\large\textbf{Tartu Mart Reiniku G\"umnaasium\\ }}}\ifEng{{\large\textbf{Tartu Mart Reiniku G\"umnaasium\\ }}}
+
+\def\Reinik{\ifEst{Tartu Mart Reiniku G\"umnaasium}\ifEng{Tartu Mart Reiniku G\"umnaasium}}
+\addcontentsline{toc}{subsubsection}{\texorpdfstring{\hyperref[Reinik]{\Reinik}}{\Reinik}}
+	
+\vspace{0.2cm}
+
+\begin{tabular}{p{2.4cm}l}
+	Aastani 1997 & Tartu X Keskkool\\
+	Aastani 2011 & Tartu Mart Reiniku \\ & Gümnaasium\\
+	Aastast 2011 & Tartu Mart Reiniku Kool\\
+	Koduleht & \href{https://www.reiniku.edu.ee/}{https://www.reiniku.edu.ee/}\\
+	Aadress & \href{https://www.google.com/maps/place/Vanemuise+48,+50410+Tartu/@58.3730024,26.7130121,17z/data=!3m1!4b1!4m5!3m4!1s0x46eb371fa0efcb45:0x73664b2e1ec3b247!8m2!3d58.3730024!4d26.7152008}{Vanemuise 48, 51003 Tartu,}\\
+	&\href{https://www.google.com/maps/place/Vanemuise+48,+50410+Tartu/@58.3730024,26.7130121,17z/data=!3m1!4b1!4m5!3m4!1s0x46eb371fa0efcb45:0x73664b2e1ec3b247!8m2!3d58.3730024!4d26.7152008}{Eesti}
+\end{tabular}
+\end{minipage}
+%
+\begin{minipage}[b][4.5cm][t]{0.5\textwidth}
+\phantomsection 
+
+\hypertarget{Treffner}{}
+
+\ifEst{{\large\textbf{Tartu linna Hugo Treffneri \\G\"umnaasium}}}\ifEng{{\large\textbf{Tartu linna Hugo Treffneri \\G\"umnaasium}}}
+
+\def\Treffner{\ifEst{Tartu linna Hugo Treffneri G\"umnaasium}\ifEng{Tartu linna Hugo Treffneri G\"umnaasium}}
+\addcontentsline{toc}{subsubsection}{\texorpdfstring{\hyperref[Treffner]{\Treffner}}{\Treffner}}
+
+\vspace{0.2cm}
+
+\begin{tabular}{p{2.4cm}l}
+	Aastani 1990 & Tartu I Keskkool\\
+	Aastast 1990 & Hugo Treffneri Gümnaasium\\
+	Koduleht & \href{http://www.htg.tartu.ee/}{http://www.htg.tartu.ee/}\\
+	Aadress & \href{https://www.google.com/maps/place/Munga+12,+51005+Tartu/@58.3822748,26.7183393,17z/data=!3m1!4b1!4m5!3m4!1s0x46eb36e6bff5d639:0x21f84932e29cfffa!8m2!3d58.3822748!4d26.720528}{Munga 12, 51007 Tartu, Eesti}\\
+\end{tabular}
+\end{minipage}
+
+\vspace{0.4cm}
+
+\begin{minipage}[b][2.5cm][t]{0.5\textwidth}
+	\phantomsection 
+	
+	\hypertarget{UT}{}
+	
+	\ifEst{{\large\textbf{Tartu \"Ulikool, f\"u\"usika instituut}}}\ifEng{{\large\textbf{University of Tartu, Institute of Physics}}}
+	
+	\def\UT{\ifEst{Tartu \"Ulikool, f\"u\"usika instituut}\ifEng{University of Tartu, Institute of Physics}}
+	\addcontentsline{toc}{subsubsection}{\texorpdfstring{\hyperref[UT]{\UT}}{\UT}}
+	
+	\vspace{0.2cm}
+	
+	\begin{tabular}{p{2.4cm}l}
+		Koduleht & \href{https://www.fi.ut.ee/et}{https://www.fi.ut.ee/et}\\
+		Aadress & \href{https://www.google.com/maps/search/W.+Ostwaldi+tn+1,+50411+Tartu,+Eesti/@58.3661698,26.6914666,18z/data=!3m1!4b1}{W. Ostwaldi tn 1, 50411 Tartu,}\\
+		&\href{https://www.google.com/maps/search/W.+Ostwaldi+tn+1,+50411+Tartu,+Eesti/@58.3661698,26.6914666,18z/data=!3m1!4b1}{Eesti}
+	\end{tabular}
+\end{minipage}
+%
+\begin{minipage}[b][2.5cm][t]{0.5\textwidth}
+	\phantomsection 
+	
+	\hypertarget{Eller}{}
+	
+	\ifEst{{\large\textbf{Heino Elleri nimeline Tartu\\ Muusikakool}}}\ifEng{{\large\textbf{Heino Elleri nimeline Tartu\\ Muusikakool}}}
+	
+	\def\Eller{\ifEst{Heino Elleri nimeline Tartu Muusikakool}\ifEng{Heino Elleri nimeline Tartu Muusikakool}}
+	
+	\addcontentsline{toc}{subsubsection}{\texorpdfstring{ \hyperref[Eller]{\Eller} }{\Eller}}
+	
+	\vspace{0.2cm}
+					
+	\begin{tabular}{p{2.4cm}l}
+		Koduleht & \href{http://www.tmk.ee/}{http://www.tmk.ee/}\\
+		Aadress & \href{https://www.google.com/maps/place/Lossi+15,+51003+Tartu/@58.3797651,26.7157614,17z/data=!3m1!4b1!4m5!3m4!1s0x46eb36e11569741f:0x96367ebd8c6149ab!8m2!3d58.3797651!4d26.7179501}{Lossi 15, 51003 Tartu, Eesti}\\
+	\end{tabular}
+\end{minipage}
+
+\end{document}
