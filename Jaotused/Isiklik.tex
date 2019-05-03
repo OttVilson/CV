@@ -1,0 +1,93 @@
+\newcommand\nimi{%
+	\makebox[0.5cm]{}%
+	\ifEst{Nimi}%
+	\ifEng{Surname}% 
+	&
+	% 
+	\ifEst{Ott Vilson \\[-\joontevahe]}%
+	\ifEng{Vilson \\}%	
+	%
+	\makebox[0.5cm]{}%
+	\ifEng{Forename} & \ifEng{Ott}%
+}
+
+\newcommand\sunniaeg{%
+	\makebox[0.5cm]{}%
+	\ifEst{S\"unniaeg}%
+	\ifEng{Date of Birth}% 
+	& 
+	%
+	\ifEst{23.05.1987}%
+	\ifEng{23$^{\text{rd}}$ of May 1987}%
+}
+
+\newcommand\aadress{%
+	\makebox[0pt]{\faHome}%
+	\makebox[0.5cm]{}%
+	\ifEst{Aadress}%
+	\ifEng{Address}% 
+	&
+	% 
+	\ifEst{Riia 10--53, 51010 Tartu, Eesti}%
+	\ifEng{Riia 10--53, 51010 Tartu, Estonia}%
+}
+
+\newcommand\telefon{%
+	\makebox[0pt]{\faPhone}%
+	\makebox[0.5cm]{}%
+	\ifEst{Telefon}%
+	\ifEng{Telephone}%
+	&
+	%
+	+372 5343 9059%
+}
+
+\newcommand\email{%
+	\makebox[0pt]{\faEnvelope}%
+	\makebox[0.5cm]{}%
+	\ifEst{E-post}%
+	\ifEng{E-mail}%
+	&
+	ott.vilson@gmail.com%	
+}
+
+\newcommand\skype{% 
+	\makebox[0pt]{\faSkype}%
+	\makebox[0.5cm]{}%
+	Skype%
+	&
+	% 
+	ott.vilson%
+}
+
+\newcommand\linkedin{%
+	\makebox[0pt]{\faLinkedin}%
+	\makebox[0.5cm]{}%
+	Linkedin
+	&
+	\href{https://www.linkedin.com/in/ott-vilson-85a49283/}{https://www.linkedin.com/in/ott-vilson-85a49283/}
+}
+
+\newcommand\twitter{%
+	\makebox[0pt]{\faTwitter}%
+	\makebox[0.5cm]{}%
+	Twitter%
+	&
+	\href{https://twitter.com/OttVilson}{https://twitter.com/OttVilson}%
+}
+
+\newcommand\codePen{%
+	\makebox[0pt]{\faCodepen}%
+	\makebox[0.5cm]{}%
+	CodePen%
+	&
+	\href{https://codepen.io/ottvilson/}{https://codepen.io/ottvilson/}%
+}
+
+\newcommand\gitHub{%
+	\makebox[0pt]{\faGithub}%
+	\makebox[0.5cm]{}%
+	GitHub%
+	&
+	\href{https://github.com/OttVilson}{https://github.com/OttVilson}%
+}
