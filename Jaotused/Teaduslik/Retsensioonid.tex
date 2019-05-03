@@ -1,0 +1,137 @@
+\xdef\retsensioonideArv{4}
+
+\newcommand\lisaRetsensioon[6]{%
+	\expandafter\def\csname retsensioon\rom{#2}aasta\endcsname{#1}%
+	\expandafter\def\csname retsensioon\rom{#2}jarjekord\endcsname{#2}%
+	\expandafter\def\csname retsensioon\rom{#2}pealkiri\endcsname{#3}%
+	\expandafter\def\csname retsensioon\rom{#2}PDFpealkiri\endcsname{#4}%
+	\expandafter\def\csname retsensioon\rom{#2}tekst\endcsname{#5}%	
+	\expandafter\def\csname retsensioon\rom{#2}ETIS\endcsname{#6}%
+}
+
+\def\kontrollRetsensiooniAasta{2000}
+%\newcounter{viimaneRetsensiooniLehekulg}
+
+\newcommand\maaraRetsensiooniAasta[1]{
+	\edef\praeguneRetsensiooniAasta{#1}
+	\ifx\kontrollRetsensiooniAasta\praeguneRetsensiooniAasta
+%		\ifnum\value{viimaneRetsensiooniLehekulg}<\thepage
+%			\setcounter{viimaneRetsensiooniLehekulg}{\thepage}
+%			\praeguneRetsensiooniAasta
+%			\xdef\kontrollRetsensiooniAasta{#1}
+%		\else
+%			\makebox[\widthof{\praeguneRetsensiooniAasta}]{}			
+%		\fi
+	\makebox[\widthof{\praeguneRetsensiooniAasta}]{}
+	\else
+	\praeguneRetsensiooniAasta
+	\xdef\kontrollRetsensiooniAasta{#1}
+	\fi
+}
+
+\newcommand\kuiRetsensiooniETISeKirjeOlemas[1]{%
+	\edef\kontrollRetsensiooni{\csname retsensioon\rom{#1}ETIS\endcsname}
+	\ifx\kontrollRetsensiooni\empty%
+	\else%
+	{\hypersetup{urlcolor = ETIScolor}%
+		[\href{https://www.etis.ee/Portal/Publications/Display/\laienda{retsensioon\rom{#1}ETIS}}{ETIS}]%
+	}%
+	\fi%
+}
+
+\newcommand\kuvaRetsensioon[1]{% 	
+
+	\phantomsection%
+	\label{retsensioon\rom{#1}}%
+	
+	\addcontentsline{toc}{subsubsection}{\texorpdfstring{\hyperref[retsensioon\rom{#1}]{\laienda{retsensioon\rom{#1}jarjekord}) \laienda{retsensioon\rom{#1}pealkiri}}}{\laienda{retsensioon\rom{#1}jarjekord}) \laienda{retsensioon\rom{#1}PDFpealkiri}}}
+	
+	\begin{minipage}[t]{1.3cm}%
+		\maaraRetsensiooniAasta{\csname retsensioon\rom{#1}aasta\endcsname}%
+	\end{minipage}%
+	%
+	\begin{minipage}[t]{0.7cm}%
+		\laienda{retsensioon\rom{#1}jarjekord})%
+	\end{minipage}%
+	%
+	\begin{minipage}[t]{0.845\textwidth}%
+		\laienda{retsensioon\rom{#1}tekst}%
+		\kuiRetsensiooniETISeKirjeOlemas{#1}%
+	\end{minipage}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaRetsensioon%
+	{2018}% aasta
+	{4}% jarjekord
+	{%
+		\ifEst{Sulev T\~okke bakalaureuset\"o\"o}%
+		\ifEng{Bachelor thesis by Sulev T\~okke}%
+	}% pealkiri
+	{%
+		\ifEst{Sulev T\~okke bakalaureuset\"o\"o}%
+		\ifEng{Bachelor thesis by Sulev T\~okke}%
+	}% PDFpealkiri
+	{%
+		\ifEst{\href{http://dspace.ut.ee/handle/10062/61666}{Kosmoloogiliste mudelite uurimine d\"unaamiliste s\"usteemide meetoditega} -- Sulev T\~okke bakalaureuset\"o\"o, Tartu \"Ulikool}%
+		\ifEng{\href{http://dspace.ut.ee/handle/10062/61666}{Studying Cosmological Models with the Methods of Dynamical Systems} (In \mbox{Estonian}) -- Bachelor thesis by Sulev T\~okke, University of Tartu}%
+	}% tekst
+	{}% ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaRetsensioon%
+	{2018}% aasta
+	{3}% jarjekord
+	{%
+		\ifEst{artikkel ajakirjas Int. J. of Geometric Methods in Modern Physics}%
+		\ifEng{Paper in the journal Int. J. of Geometric Methods in Modern Physics}%
+	}% pealkiri
+	{%
+		\ifEst{artikkel ajakirjas Int. J. of Geometric Methods in Modern Physics}%
+		\ifEng{A paper in the journal Int. J. of Geometric Methods in Modern Physics}%		
+	}% PDFpealkiri
+	{%
+		\ifEst{artikkel ajakirjas \href{https://www.worldscientific.com/worldscinet/ijgmmp}{Int. J. of Geometric Methods in Modern Physics}}%
+		\ifEng{A paper in the journal \href{https://www.worldscientific.com/worldscinet/ijgmmp}{Int. J. of Geometric Methods in Modern Physics}}%		
+	}% tekst
+	{}% ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaRetsensioon%
+	{2016}% aasta
+	{2}% jarjekord
+	{%
+		\ifEst{Jaan Ruus'i bakalaureuset\"o\"o}%
+		\ifEng{Bachelor thesis by Jaan Ruus}%
+	}% pealkiri
+	{%
+		\ifEst{Jaan Ruus'i bakalaureuset\"o\"o}%
+		\ifEng{Bachelor thesis by Jaan Ruus}%
+	}% PDFpealkiri
+	{%
+		\ifEst{\href{http://dspace.ut.ee/bitstream/handle/10062/52047/Ruus_Jaan.pdf}{Punktosakese liikumisv\~orrandid teleparalleelses gravitatsiooniteoorias} -- Jaan Ruus'i bakalaureuset\"o\"o, Tartu \"Ulikool}%
+		\ifEng{\href{http://dspace.ut.ee/bitstream/handle/10062/52047/Ruus_Jaan.pdf}{Equations of Motion for a Point Particle in Teleparallel Gravity} (In \mbox{Estonian}) -- Bachelor thesis by Jaan Ruus, University of Tartu}%
+	}% tekst
+	{}% ETIS
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaRetsensioon%
+	{2015}% aasta
+	{1}% jarjekord
+	{%
+		\ifEst{artikkel ajakirjas Physics Letters B}%
+		\ifEng{Paper in the journal Physics Letters B}%
+	}% pealkiri
+	{%
+		\ifEst{artikkel ajakirjas Physics Letters B}%
+		\ifEng{Paper in the journal Physics Letters B}%	
+	}% PDFpealkiri
+	{%
+		\ifEst{artikkel ajakirjas \href{https://www.journals.elsevier.com/physics-letters-b}{Physics Letters B} \sertifikaat{\href{https://www.dropbox.com/s/dic4twu2ee14gdf/Certificate.pdf?dl=0}{sertifikaat}}}%
+		\ifEng{Paper in the journal \href{https://www.journals.elsevier.com/physics-letters-b}{Physics Letters B} \sertifikaat{\href{https://www.dropbox.com/s/dic4twu2ee14gdf/Certificate.pdf?dl=0}{certificate}}}%
+	}% tekst
+	{}% ETIS	
