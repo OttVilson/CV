@@ -1,0 +1,220 @@
+\def\kool{\ifEst{Kool}\ifEng{School}}
+
+\newcommand\koolitutvustus[1]{%
+%[#1] %
+}
+
+\newcommand\teema[1]{%
+#1%
+}
+
+\newcommand\pohikool{%
+	\makebox[0.5cm]{}%
+	1994\,--\,2003 
+	&
+	% 
+	\ifEst{\underline{p\~ohikool}}%
+	\ifEng{\underline{primary school}}%
+	\\[0.2cm]
+	%
+	\makebox[0.5cm]{}%
+	& 
+	\ifEst{Tartu Mart Reiniku G\"umnaasium}\ifEng{Tartu Mart Reinik Gymnasium} %
+	\koolitutvustus{%
+	\hyperlink{Reinik}{\kool}%
+	}%
+	\sertifikaat{%
+	\ifEst{%
+		\href{https://www.dropbox.com/s/ukd75zo9fggfue2/Vilson_pohikool.pdf?dl=0}{l\~oputunnistus}%
+	}%
+	\ifEng{%
+		\href{https://www.dropbox.com/s/ukd75zo9fggfue2/Vilson_pohikool.pdf?dl=0}{diploma (in Estonian)}%	
+	}%
+	}%
+}
+
+\newcommand\keskkool{%
+	\makebox[0.5cm]{}%
+	2003\,--\,2006
+	&
+	%
+	\ifEst{\underline{g\"umnaasium}}%
+	\ifEng{\underline{high school}}%
+	\\[0.2cm]
+	%
+	\makebox[0.5cm]{}%
+	&
+	\ifEst{Tartu linna Hugo Treffneri Gümnaasium, looduse \~oppesuund}\ifEng{Hugo Treffner Gymnasium, department of life sciences} %
+	\\
+	\makebox[0.5cm]{}%
+	&
+	%
+	\koolitutvustus{% 
+		\hyperlink{Treffner}{\kool}%
+	}%
+	%
+	\sertifikaat{%
+	\ifEst{%
+	\href{https://www.dropbox.com/s/gib0av17vmaa2ld/Vilson_gumnaasium.pdf?dl=0}{l\~oputunnistus}%
+	}%
+	\ifEng{%
+	\href{https://www.dropbox.com/s/gib0av17vmaa2ld/Vilson_gumnaasium.pdf?dl=0}{diploma (in Estonian)}%	
+	}%
+	}%
+}
+
+\newcommand\bakalaureus{%
+%	\makebox[0pt]{\faUniversity\,\faGraduationCap}
+	%
+	\makebox[0.5cm]{}%
+	2006\,--\,2010%
+	&
+	\ifEst{\underline{bakalaureus} -- f\"u\"usika}%
+	\ifEng{\underline{bachelor} -- physics} \\[0.2cm]
+	%
+	\makebox[0.5cm]{}%
+	&%
+	\ifEst{Tartu \"Ulikool, loodus- ja tehnoloogiateaduskond,}%
+	\ifEng{University of Tartu, Faculty of Science and Technology,} \\%
+	%
+	&%
+	\teema{%
+	\ifEst{teema: \textbf{Muutuva valguskiirusega kosmoloogia}}%
+	\ifEng{subject: \textbf{Cosmologies with varying speed of light} (in Estonian)}%
+	\\
+	%
+	\makebox[0.5cm]{}%
+	&%
+	}%
+	\koolitutvustus{%
+	\hyperlink{UT}{\kool}%
+	}%
+	%
+	\sertifikaat{%
+	\ifEst{%
+		\href{https://www.dropbox.com/s/oog60i548whhk4c/Vilson_bakalaureus.pdf?dl=0}{diplom}%
+	}%
+	\ifEng{%
+		\href{https://www.dropbox.com/s/j6rvzkwrbm5090j/Vilson_bachelor.pdf?dl=0}{diploma}%
+	}%
+	}%
+}
+
+\newcommand\eller{%
+	\makebox[0.5cm]{}%
+	2006\,--\,2011% 
+	&
+	%
+	\ifEst{\underline{kutseharidus} -- tuuba}%
+	\ifEng{\underline{vocational education} -- tuba}%
+	\\[0.2cm]
+	%
+	\makebox[0.5cm]{}%
+	&
+	%
+	\ifEst{Heino Elleri nimeline Tartu Muusikakool, puhkpillide eriala, }%
+	\ifEng{Heino Eller Tartu Music School, wind instruments, }%
+	\\
+	%
+	\makebox[0.5cm]{}%
+	&
+	%
+	\koolitutvustus{%
+		\hyperlink{Eller}{\kool}%
+	}%
+	%
+	\sertifikaat{%
+	\ifEst{%
+		\href{https://www.dropbox.com/s/05ezx2iouoi36c9/Vilson_tuuba.pdf?dl=0}{l\~oputunnistus}%
+	}%
+	\ifEng{%
+		\href{https://www.dropbox.com/s/05ezx2iouoi36c9/Vilson_tuuba.pdf?dl=0}{diploma (in Estonian)}%
+	}%
+	}%	
+}
+
+\newcommand\magistrantuur{%
+	%
+\makebox[0.5cm]{}%
+	2011\,--\,2013%
+	&
+	%
+	\ifEst{\underline{magistrantuur} -- f\"u\"usika}%
+	\ifEng{\underline{master} -- physics} \\[0.2cm]
+	%
+\makebox[0.5cm]{}%
+	&
+	%
+	\ifEst{Tartu \"Ulikool, loodus- ja tehnoloogiateaduskond,}%
+	\ifEng{University of Tartu, Faculty of Science and Technology,}%
+	\\
+	%
+\makebox[0.5cm]{}%
+	&
+	\teema{%
+	\ifEst{teema: \textbf{\href{http://dspace.ut.ee/handle/10062/30782}{Friedmanni kosmoloogia \"uldistes skalaar-tensort\"u\"upi}}}%
+	\ifEng{subject: \textbf{\href{http://dspace.ut.ee/handle/10062/30782}{The Friedmann Cosmology in General Theories of}}}%
+	\\	
+	%
+\makebox[0.5cm]{}%
+	&
+	\ifEst{\textbf{\href{http://dspace.ut.ee/handle/10062/30782}{ gravitatsiooniteooriates}} }%
+	\ifEng{\textbf{\href{http://dspace.ut.ee/handle/10062/30782}{Scalar-Tensor Gravity}} (in Estonian) }%
+	}%
+	%
+	\koolitutvustus{%
+	\hyperlink{UT}{\kool}%
+	}%
+	\sertifikaat{%
+	\ifEst{%
+		\href{https://www.dropbox.com/s/vd3kamgo1xvjswo/Vilson_magister.pdf?dl=0}{diplom}%
+	}%
+	\ifEng{%
+		\href{https://www.dropbox.com/s/lbi7l6gvmw9whh0/Vilson_master.pdf?dl=0}{diploma}%
+	}%
+	}% 
+}
+
+\newcommand\doktorantuur{%
+	%
+\makebox[0.5cm]{}%
+	2013\,--\,2019%
+	%
+	&
+	\ifEst{\underline{doktorantuur} -- f\"u\"usika}%
+	\ifEng{\underline{PhD studies} -- physics}%
+	\\[0.2cm]
+	%
+	%
+\makebox[0.5cm]{}%
+	&
+	\ifEst{Tartu \"Ulikool, loodus- ja t\"appisteaduste valdkond,}%
+	\ifEng{University of Tartu, Faculty of Science and Technology,}%
+	\\
+	%
+\makebox[0.5cm]{}%
+	&
+	\teema{%
+	\ifEst{%
+	doktorit\"o\"o (inglise keeles): \href{https://dspace.ut.ee/handle/10062/63178}{\textbf{Teisenemiseeskirjad ja invariandid}}}%
+	\ifEng{dissertation: \href{https://dspace.ut.ee/handle/10062/63178}{\textbf{Transformation properties and invariants}}}%
+	\\
+	%
+\makebox[0.5cm]{}%
+	&
+	\ifEst{\href{https://dspace.ut.ee/handle/10062/63178}{\textbf{skalaar-tensort\"u\"upi gravitatsiooniteooriates}} }%
+	\ifEng{\href{https://dspace.ut.ee/handle/10062/63178}{\textbf{in scalar-tensor theories of gravity}} }%
+	}%
+	%
+	\koolitutvustus{%
+		\hyperlink{UT}{\kool}%
+	}%
+	\sertifikaat{%
+	\ifEst{%
+	\href{https://www.dropbox.com/s/mwqzzf145dg5x75/Vilson_doktorantuuri_oppetulemused.pdf?dl=0}{\~oppetulemused}%
+	}%
+	\ifEng{%
+		\href{https://www.dropbox.com/s/f6nu7jqxxj6m5jt/Vilson_PhD_results.pdf?dl=0}{grades}%
+	}%	
+	}%	
+}
