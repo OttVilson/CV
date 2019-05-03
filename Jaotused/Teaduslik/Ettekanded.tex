@@ -1,0 +1,157 @@
+\xdef\ettekanneteArv{7}
+
+\newcommand\lisaEttekanne[7]{%
+	\expandafter\def\csname ettekanne\rom{#2}aasta\endcsname{#1}%
+	\expandafter\def\csname ettekanne\rom{#2}jarjekord\endcsname{#2}%
+	\expandafter\def\csname ettekanne\rom{#2}pealkiri\endcsname{#3}%
+	\expandafter\def\csname ettekanne\rom{#2}PDFpealkiri\endcsname{#4}%
+	\expandafter\def\csname ettekanne\rom{#2}konverentsinimi\endcsname{#5}%
+	\expandafter\def\csname ettekanne\rom{#2}toimumiskoht\endcsname{#6}	
+	\expandafter\def\csname ettekanne\rom{#2}ETIS\endcsname{#7}%
+}
+
+\def\kontrollAasta{2000}
+
+\newcommand\maaraAasta[1]{%
+	\edef\praeguneAasta{#1}%
+	\ifx\kontrollAasta\praeguneAasta%	
+	\makebox[\widthof{\praeguneAasta}]{}
+	\else%
+	\praeguneAasta%
+	\xdef\kontrollAasta{#1}%
+	\fi%
+}
+
+\newcommand\kuiETISeKirjeOlemas[1]{%
+	\edef\kontroll{\csname ettekanne\rom{#1}ETIS\endcsname}
+	\ifx\kontroll\empty%
+	\else%
+	{\hypersetup{urlcolor = ETIScolor}%
+		[\href{https://www.etis.ee/Portal/Publications/Display/\laienda{ettekanne\rom{#1}ETIS}}{ETIS}]%
+	}%
+	\fi%
+}
+
+\newcommand\kuvaEttekanne[1]{ 
+	
+	\phantomsection%
+	\label{ettekanne\rom{#1}}%
+	
+	\addcontentsline{toc}{subsubsection}{\texorpdfstring{\hyperref[ettekanne\rom{#1}]{\laienda{ettekanne\rom{#1}jarjekord}) \laienda{ettekanne\rom{#1}pealkiri}}}{\laienda{ettekanne\rom{#1}jarjekord}) \laienda{ettekanne\rom{#1}PDFpealkiri}}}
+	
+	\begin{minipage}[t]{1.3cm}%
+		\maaraAasta{\csname ettekanne\rom{#1}aasta\endcsname}%
+	\end{minipage}%
+	%
+	\begin{minipage}[t]{0.7cm}%
+		\laienda{ettekanne\rom{#1}jarjekord})%
+	\end{minipage}%
+	%
+	\begin{minipage}[t]{0.845\textwidth}%
+		\laienda{ettekanne\rom{#1}pealkiri}~-- %
+		\laienda{ettekanne\rom{#1}konverentsinimi}, %
+		\laienda{ettekanne\rom{#1}toimumiskoht} %
+		\kuiETISeKirjeOlemas{#1}%
+	\end{minipage}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaEttekanne%
+	{2018}% aasta
+	{7}% jarjekord
+	{Symmetric teleparallel equivalent of general relativity and extensions: an \mbox{introduction}}% pealkiri
+	{Symmetric teleparallel equivalent of general relativity and extensions: an introduction}% PDFpealkiri
+	{Teleparallel Gravity Workshop in Tartu}% konverentsinimi
+	{%
+		\ifEst{Eesti}%
+		\ifEng{Estonia}%
+	}% toimumiskoht
+	{42d4248e-576c-4cce-afd0-f6118762a51c}% ETIS 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaEttekanne%
+	{2017}% aasta
+	{6}% jarjekord
+	{The approximated scalar field equation and its transformation in scalar-tensor \mbox{gravity}}% pealkiri
+	{The approximated scalar field equation and its transformation in scalar-tensor gravity}% PDFpealkiri
+	{Geometric Foundations of Gravity in Tartu}% konverentsinimi
+	{%
+		\ifEst{Eesti}%
+		\ifEng{Estonia}%	
+	}% toimumiskoht
+	{96aebc76-7d1b-47b1-9cc3-e6309aae377b}% ETIS
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaEttekanne%
+	{2016}% aasta
+	{5}% jarjekord
+	{Invariant quantities in scalar-tensor theories}% pealkiri
+	{Invariant quantities in scalar-tensor theories}% PDFpealkiri
+	{%
+		\ifEst{Keemilise ja Bioloogilise Füüsika Instituudi seminar}%
+		\ifEng{seminar at National Institute Of Chemical Physics And Biophysics}%		
+	}% konverentsinimi
+	{%
+		\ifEst{Eesti}%
+		\ifEng{Estonia}%
+	}% toimumiskoht
+	{}% ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaEttekanne%
+	{2016}% aasta
+	{4}% jarjekord
+	{Post-Newtonian parameter $\gamma$ for multiscalar-tensor gravity with a general \mbox{potential}}% pealkiri
+	{Post-Newtonian parameter gamma for multiscalar-tensor gravity with a general potential}% PDFpealkiri
+	{Tuorla-Tartu annual meeting 2016: Building blocks of the Universe}% konverentsinimi
+	{%
+		\ifEst{Soome}%
+		\ifEng{Finland}%
+	}% toimumiskoht
+	{6b39d80e-6a45-4ea5-a443-d5d4f88bad84}% ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaEttekanne%
+	{2015}% aasta
+	{3}% jarjekord
+	{Invariants in scalar-tensor gravity}% pealkiri
+	{Invariants in scalar-tensor gravity}% PDFpealkiri
+	{Tartu-Tuorla annual meeting 2015: (Always Look on) The Bright Side of Space}% konverentsi nimi
+	{%
+		\ifEst{Eesti}%
+		\ifEng{Estonia}%
+	}% toimumiskoht
+	{b18c7b9b-0fad-4af1-8a57-d2788dd5d2ea}% ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaEttekanne%
+	{2014}% aasta
+	{2}% jarjekord
+	{Scalar field redefinition freedom in scalar-tensor gravity}% pealkiri
+	{Scalar field redefinition freedom in scalar-tensor gravity}% PDFpealkiri
+	{10$^{\text{th}}$ International \mbox{Conference} on Clifford Algebras and their Applications in Mathematical Physics}% konverentsi nimi
+	{%
+	\ifEst{Eesti}%
+	\ifEng{Estonia}%	
+	}% toimumiskoht
+	{2102b020-8302-4d70-8c96-e04b48a505a8}% ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaEttekanne%
+	{2014}% aasta
+	{1}% jarjekord
+	{Non-uniqueness of scalar field in scalar-tensor gravity}% pealkiri
+	{Non-uniqueness of scalar field in scalar-tensor gravity}% PDFpealkiri
+	{Moduli Operads \mbox{Dynamics II}}% konverentsi nimi
+	{%		
+		\ifEst{Eesti}%
+		\ifEng{Estonia}%
+	}% toimumiskoht
+	{9da774d8-46dd-4c88-9965-e423edcb7723}% ETIS

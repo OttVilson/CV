@@ -1,0 +1,38 @@
+\xdef\opetamisteArv{1}
+
+\newcommand\lisaOpetamine[4]{%
+	\expandafter\def\csname opetamine\rom{#2}aasta\endcsname{#1}%
+	\expandafter\def\csname opetamine\rom{#2}jarjekord\endcsname{#2}%
+	\expandafter\def\csname opetamine\rom{#2}pealkiri\endcsname{#3}%
+	\expandafter\def\csname opetamine\rom{#2}PDFpealkiri\endcsname{#4}%
+}
+
+\newcommand\kuvaOpetamine[1]{% 	
+
+	\phantomsection%
+	\label{opetamine\rom{#1}}%
+	
+	\addcontentsline{toc}{subsubsection}{\texorpdfstring{\hyperref[opetamine\rom{#1}]{\laienda{opetamine\rom{#1}pealkiri}}}{\laienda{opetamine\rom{#1}PDFpealkiri}}}
+	
+	\begin{minipage}[t]{3cm}%
+		\laienda{opetamine\rom{#1}aasta}%
+	\end{minipage}%
+	%
+	\begin{minipage}[t]{0.845\textwidth}%
+		\laienda{opetamine\rom{#1}pealkiri}%
+	\end{minipage}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaOpetamine%
+	{2015\,--\,2016}% aasta
+	{1}% jarjekord
+	{%
+		\ifEst{Abi\~oppej\~oud loengukursuses \enquote{Anal\"u\"utiline mehaanika}}%
+		\ifEng{Assisting lecturer in the course ``Analytical Mechanics'' (In Estonian)}%
+	}% pealkiri
+	{%
+		\ifEst{Abi\~oppej\~oud loengukursuses \enquote{Anal\"u\"utiline mehaanika}}%
+		\ifEng{Assisting lecturer in the course ``Analytical Mechanics'' (In Estonian)}%
+	}% PDFpealkiri

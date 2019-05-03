@@ -1,0 +1,74 @@
+\xdef\postriteArv{1}
+
+\newcommand\lisaPoster[7]{%
+	\expandafter\def\csname poster\rom{#2}aasta\endcsname{#1}%
+	\expandafter\def\csname poster\rom{#2}jarjekord\endcsname{#2}%
+	\expandafter\def\csname poster\rom{#2}pealkiri\endcsname{#3}%
+	\expandafter\def\csname poster\rom{#2}PDFpealkiri\endcsname{#4}%
+	\expandafter\def\csname poster\rom{#2}konverentsinimi\endcsname{#5}%
+	\expandafter\def\csname poster\rom{#2}toimumiskoht\endcsname{#6}%	
+	\expandafter\def\csname poster\rom{#2}ETIS\endcsname{#7}%
+}
+
+\def\kontrollPostriAasta{2000}
+
+\newcommand\maaraPostriAasta[1]{
+	\edef\praegunePostriAasta{#1}
+	\ifx\kontrollPostriAasta\praegunePostriAasta
+	\makebox[\widthof{\praegunePostriAasta}]{}
+	\else
+	\praegunePostriAasta
+	\xdef\kontrollPostriAasta{#1}
+	\fi
+}
+
+\newcommand\kuiPostriETISeKirjeOlemas[1]{%
+	\edef\kontrollPostri{\csname poster\rom{#1}ETIS\endcsname}
+	\ifx\kontrollPostri\empty%
+	\else%
+	{\hypersetup{urlcolor = ETIScolor}%
+		[\href{https://www.etis.ee/Portal/Publications/Display/\laienda{poster\rom{#1}ETIS}}{ETIS}]%
+	}%
+	\fi%
+}
+
+\newcommand\kuvaPoster[1]{% 	
+
+	\phantomsection%
+	\label{poster\rom{#1}}%
+	
+	\addcontentsline{toc}{subsubsection}{\texorpdfstring{\hyperref[poster\rom{#1}]{\laienda{poster\rom{#1}jarjekord}) \laienda{poster\rom{#1}pealkiri}}}{\laienda{poster\rom{#1}jarjekord}) \laienda{poster\rom{#1}PDFpealkiri}}}
+	
+	\begin{minipage}[t]{1.3cm}%
+		\maaraPostriAasta{\csname poster\rom{#1}aasta\endcsname}%
+	\end{minipage}%
+	%
+	\begin{minipage}[t]{0.7cm}%
+		\laienda{poster\rom{#1}jarjekord})%
+	\end{minipage}%
+	%
+	\begin{minipage}[t]{0.845\textwidth}%
+		\laienda{poster\rom{#1}pealkiri}~-- 
+		\laienda{poster\rom{#1}konverentsinimi}, %
+		\laienda{poster\rom{#1}toimumiskoht} %
+		\kuiPostriETISeKirjeOlemas{#1}%
+	\end{minipage}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaPoster%
+	{2017}% aasta
+	{1}% jarjekord
+	{Invariants in scalar-tensor theories of gravity}% pealkiri
+	{Invariants in scalar-tensor theories of gravity}% PDFpealkiri
+	{%
+		\ifEst{Funktsionaalsete materjalide ja tehnoloogiate doktorikooli teaduskonverents 2017}%
+		\ifEng{The science conference of the \mbox{graduate} school of functional materials and technologies in 2017}%
+	}% konverentsinimi
+	{%
+		\ifEst{Eesti}%
+		\ifEng{Estonia}%
+	}% toimumiskoht
+	{109b2f23-e268-4a13-842e-e36135a2e8c4}% ETIS 
+	

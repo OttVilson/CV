@@ -1,0 +1,179 @@
+\xdef\artikliteArv{10}
+
+\def\ja{%
+	\ifEst{ja}%
+	\ifEng{and}%
+}
+
+% https://tex.stackexchange.com/questions/23487/how-can-i-get-roman-numerals-in-text
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%https://tex.stackexchange.com/questions/109615/best-practice-for-creating-user-defined-command-names
+\newcommand\lisaArtikkel[9][]{%
+	\expandafter\def\csname artikkel\rom{#2}lisa\endcsname{#1}%
+	\expandafter\def\csname artikkel\rom{#2}jarjekord\endcsname{#2}%
+	\expandafter\def\csname artikkel\rom{#2}autorid\endcsname{#3}%
+	\expandafter\def\csname artikkel\rom{#2}pealkiri\endcsname{#4}%
+	\expandafter\def\csname artikkel\rom{#2}pdfpealkiri\endcsname{#5}
+	\expandafter\def\csname artikkel\rom{#2}ajakiri\endcsname{#6}%
+	\expandafter\def\csname artikkel\rom{#2}arXiv\endcsname{#7}%
+	\expandafter\def\csname artikkel\rom{#2}inSPIRE\endcsname{#8}%
+	\expandafter\def\csname artikkel\rom{#2}ETIS\endcsname{#9}% 
+}
+
+\newcommand\laienda[1]{%
+	\csname#1\endcsname
+}
+
+\newcommand\kuvaArtikkel[1]{
+	
+	\phantomsection
+	\label{publikatsioon\rom{#1}}
+	%
+	\addcontentsline{toc}{subsubsection}{\texorpdfstring{\hyperref[publikatsioon\rom{#1}]{\laienda{artikkel\rom{#1}jarjekord}) \laienda{artikkel\rom{#1}pealkiri}}}{\laienda{artikkel\rom{#1}jarjekord}) \laienda{artikkel\rom{#1}pdfpealkiri}}}
+	%
+	\textbf{\laienda{artikkel\rom{#1}jarjekord}})\quad{}\laienda{artikkel\rom{#1}autorid} ``\laienda{artikkel\rom{#1}pealkiri}'' \laienda{artikkel\rom{#1}ajakiri} \laienda{artikkel\rom{#1}lisa}
+	%
+	{\hypersetup{urlcolor = arXivcolor}
+		(arXiv:\href{https://arxiv.org/abs/\laienda{artikkel\rom{#1}arXiv}}{\laienda{artikkel\rom{#1}arXiv}})
+	}
+	%
+	{\hypersetup{urlcolor = inSPIREcolor}
+		[\href{https://inspirehep.net/record/\laienda{artikkel\rom{#1}inSPIRE}}{\textsc{in}SPIRE}]
+	}
+	%
+	{\hypersetup{urlcolor = ETIScolor}
+		[\href{https://www.etis.ee/Portal/Publications/Display/\laienda{artikkel\rom{#1}ETIS}}{ETIS}]%
+	} 
+}
+
+\lisaArtikkel%
+	%}% lisa
+	{10}% jarjekord
+	{M.\ R\"unkla \ja{} O.\ Vilson}% autorid
+	{Family of scalar-nonmetricity theories of gravity}% pealkiri
+	{Family of scalar-nonmetricity theories of gravity}% PDF pealkiri
+	{\textit{Phys.\ Rev.} D \href{https://doi.org/10.1103/PhysRevD.98.084034}{\textbf{98}, 084034} (2018)}% ajakiri koos aastaga
+	{1805.12197}% arXiv
+	{1675778}% inSPIRE
+	{c2675fa9-43d7-45a4-aec5-ca499a49a864} % ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaArtikkel%
+	%}% lisa
+	{9}% jarjekord
+	{L.\ J\"arv, M.\ R\"unkla, M.\ Saal \ja{} O.\ Vilson}% autorid
+	{Nonmetricity formulation of general relativity and its scalar-tensor extension}% pealkiri
+	{Nonmetricity formulation of general relativity and its scalar-tensor extension}% PDFpealkiri
+	{\textit{Phys.\ Rev.} D \href{https://dx.doi.org/10.1103/PhysRevD.97.124025}{\textbf{97}, 124025} (2018)}% ajakiri koos aastaga
+	{1802.00492}% arXiv
+	{1652842}% inSPIRE
+	{b954d9ef-860e-4e0c-af5f-476fa47a98f7} % ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaArtikkel%
+	%}% lisa
+	{8}% jarjekord
+	{M.\ Hohmann, L.\ J\"arv, P.\ Kuusk, E.\ Randla \ja{} O.\ Vilson}% autorid
+	{Post-Newtonian parameter $\gamma$ for multiscalar-tensor gravity with a general potential}% pealkiri
+	{Post-Newtonian parameter gamma for multiscalar-tensor gravity with a general potential}% PDFpealkiri
+	{\textit{Phys.\ Rev.} D \href{https://doi.org/10.1103/PhysRevD.94.124015}{{\bf 94}, 124015} (2016)}% ajakiri koos aastaga
+	{1607.02356}% arXiv
+	{1474663}% inSPIRE
+	{275a2242-d5ce-4184-adfc-71d1f805454f} % ETIS	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaArtikkel%
+	[\href{https://cqgplus.com/2016/10/05/cqg-insight-scalar-tensor-cosmology-inflation-and-invariants/}{CQG+ Insight}]% lisa
+	{7}% jarjekord
+	{P.\ Kuusk, M.\ R\"unkla, M.\ Saal \ja{} O.\ Vilson}% autorid
+	{Invariant slow-roll parameters in scalar-tensor theories}% pealkiri
+	{Invariant slow-roll parameters in scalar-tensor theories}% PDFpealkiri
+	{\textit{Class.\ Quantum Grav.} \href{https://doi.org/10.1088/0264-9381/33/19/195008}{{\bf 33}, 195008} (2016)}% ajakiri koos aastaga
+	{1605.07033}% arXiv
+	{1464827}% inSPIRE
+	{4dffeb22-05dd-47db-8f46-16e7893f64b4} % ETIS	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaArtikkel%
+	[\linebreak]% lisa
+	{6}% jarjekord
+	{L.\ J\"arv, P.\ Kuusk, M.\ Saal \ja{} O.\ Vilson}% autorid
+	{The formalism of invariants in scalar-tensor and multiscalar-tensor theories of gravitation}% pealkiri
+	{The formalism of invariants in scalar-tensor and multiscalar-tensor theories of gravitation}% PDFpealkiri
+	{\textit{Marcel Grossmann XIV} \href{https://dx.doi.org/10.1142/9789813226609_0083}{1190–-95} (2017)}% ajakiri koos aastaga
+	{1512.09166}% arXiv
+	{1411793}% inSPIRE
+	{91fee6b0-8c99-4d3e-861e-e5775ac9cf51} % ETIS	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaArtikkel%
+	%[]% lisa
+	{5}% jarjekord
+	{P.\ Kuusk, L.\ J\"arv \ja{} O.\ Vilson}% autorid
+	{Invariant quantities in the multiscalar-tensor theories of gravitation}% pealkiri
+	{Invariant quantities in the multiscalar-tensor theories of gravitation}% PDFpealkiri
+	{\textit{Int.\ J.\ Mod.\ Phys.} A \href{http://dx.doi.org/10.1142/S0217751X16410037}{{\bf 31}, 1641003} (2016)}% ajakiri koos aastaga
+	{1509.02903}% arXiv
+	{1392641}% inSPIRE
+	{f538709e-0397-484f-a0d7-8804e5ffe7af} % ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaArtikkel%
+	%[]% lisa
+	{4}% jarjekord
+	{L.\ J\"arv, P.\ Kuusk, M.\ Saal \ja{} O.\ Vilson}% autorid
+	{Transformation properties and general relativity regime in scalar–tensor theories}% pealkiri
+	{Transformation properties and general relativity regime in scalar–tensor theories}% PDFpealkiri
+	{\textit{Class.\ Quantum Grav.} \href{https://doi.org/10.1088/0264-9381/32/23/235013}{{\bf 32}, 235013} (2015)}% ajakiri koos aastaga
+	{1504.02686}% arXiv
+	{1358926}% inSPIRE
+	{75192c4e-39c4-460d-bb02-33b64ba4997b} % ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaArtikkel%
+	%[]% lisa
+	{3}% jarjekord
+	{O.\ Vilson}% autorid
+	{Some remarks concerning invariant quantities in scalar-tensor gravity}% pealkiri
+	{Some remarks concerning invariant quantities in scalar-tensor gravity}% PDFpealkiri
+	{\textit{Adv.\ Appl.\ Clifford Algebras} 	\href{https://doi.org/10.1007/s00006-015-0567-4}{{\bf 27}, 321--32} (2017)}% ajakiri koos aastaga
+	{1509.02481}% arXiv
+	{1392448}% inSPIRE
+	{ef404b33-bb23-4e20-a38e-8d504aa50b7d} % ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaArtikkel%
+	%[]% lisa
+	{2}% jarjekord
+	{L.\ J\"arv, P.\ Kuusk, M.\ Saal \ja{} O.\ Vilson}% autorid
+	{Invariant quantities in the scalar-tensor theories of gravitation}% pealkiri
+	{Invariant quantities in the scalar-tensor theories of gravitation}% PDFpealkiri
+	{\textit{Phys.\ Rev.} D \href{https://doi.org/10.1103/PhysRevD.91.024041}{{\bf 91}, 024041} (2015)}% ajakiri koos aastaga
+	{1411.1947}% arXiv
+	{1326631}% inSPIRE
+	{c7ce1756-da5b-4d30-b119-89da991cb426} % ETIS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lisaArtikkel%
+	[\linebreak]% lisa
+	{1}% jarjekord
+	{L.\ J\"arv, P.\ Kuusk, M.\ Saal \ja{} O.\ Vilson}% autorid
+	{Parametrizations in scalar-tensor theories of gravity and the limit of general relativity}% pealkiri
+	{Parametrizations in scalar-tensor theories of gravity and the limit of general relativity}% PDFpealkiri
+	{\textit{J.\ Phys.: Conf.\ Ser.} \href{https://doi.org/10.1088/1742-6596/532/1/012011}{{\bf 532}, 012011} (2014)}% ajakiri koos aastaga
+	{1501.07781}% arXiv
+	{1316183}% inSPIRE
+	{191f590e-f103-4dcf-8d75-b4253166587d} % ETIS
