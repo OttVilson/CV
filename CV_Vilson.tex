@@ -13,6 +13,8 @@
 \usepackage{babel} % jutumärgid https://tex.stackexchange.com/questions/281279/style-of-quotation-marks; https://keeleabi.eki.ee/?leht=8&id=270
 \usepackage{amsmath,fixmath,bm,mathtools,esint,eufrak,graphicx,multicol}
 \usepackage{xcolor}
+\usepackage{xargs} % https://tex.stackexchange.com/questions/29973/more-than-one-optional-argument-for-newcommand
+
 
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref} % ocgcolorlinks,
 \usepackage[open,openlevel=2]{bookmark}
@@ -25,10 +27,10 @@
 	paper = a4paper,
 %	textwidth = 125mm,
 %	textheight = 200mm,
-	top=20mm,
+	top=15mm,
 	left=15mm,
-	right=20mm,
-	bottom=20mm,
+	right=15mm,
+	bottom=15mm,
 %	footskip=15mm,
 %	showframe=true
 }
@@ -98,14 +100,16 @@
 	\vspace{0.2cm}
 	
 	\begin{tabular}{p{\veerg}l}
-%		\nimi \\
-%		\sunniaeg \\
-%		\aadress \\
-%		\telefon \\
-%		\email \\
-%		\skype \\
+		\nimi \\
+		\sunniaeg \\
+		\aadress \\
+		\telefon \\
+		\email \\
+		\skype \\
 %		\linkedin \\
-%		\twitter
+%		\twitter \\
+		\codePen \\
+		\gitHub
 	\end{tabular}
 
 % tühi rida
@@ -133,20 +137,19 @@
 	
 	\fontsize{12}{12}\selectfont
 	\begin{tabular}{p{\veerg}l}
-	\doktorantuur \\[0.3cm]
+	\doktorantuur[1]{} \\[0.3cm]
 		%
-	\magistrantuur \\[0.3cm]
+	\magistrantuur{} \\[0.3cm]
 		%
-	\eller \\[0.3cm]
+%	\eller \\[0.3cm]
 		%
-	\bakalaureus \\[0.3cm]
+	\bakalaureus{} \\[0.3cm]
 		%
-	\keskkool \\[0.3cm]
+%	\keskkool \\[0.3cm]
 		%
-	\pohikool
+%	\pohikool
 	\end{tabular}
 \end{minipage}
-%\fontsize{12}{1.2}\selectfont
 
 \vspace{0.4cm}
 
@@ -163,11 +166,11 @@
 	\vspace{0.2cm}
 	
 	\begin{tabular}{p{\veerg}l}
-%		\courserakaks \\
+		\courserakaks \\
 		%
-%		\courserauks \\
+		\courserauks \\
 		%
-%		\rstuks \\
+		\rstuks \\
 		%
 %		\Iisrael 
 	\end{tabular}
@@ -187,7 +190,9 @@
 	\vspace{0.2cm}
 	
 	\begin{tabular}{p{\veerg}l}
-%		\UTuks \\
+		\Viking \\
+		%
+		\UTuks \\
 		%
 %		\LSKO \\
 		%
@@ -214,11 +219,11 @@
 	\vspace{0.2cm}
 	
 	\begin{tabular}{p{\veerg}l}
-%		\eesti \\
+		\eesti \\
 		%
-%		\inglise \\
+		\inglise \\
 		%
-%		\vene
+		\vene
 	\end{tabular}
 \end{minipage}
 
@@ -236,9 +241,9 @@
 	\vspace{0.2cm}
 	
 	\begin{tabular}{p{\veerg}l}
-%		\igapaevaselt \\[0.1cm]
+		\igapaevaselt \\[0.1cm]
 		%
-%		\kasutan
+		\kasutan
 	\end{tabular}
 \end{minipage}
 
@@ -257,9 +262,9 @@
 	\vspace{0.2cm}
 
 	\begin{tabular}{p{\veerg}l}
-%	\kesktase \\
+	\kesktase \\
 	%
-%	\algtase
+	\algtase
 \end{tabular} 
 \end{minipage}
 
@@ -267,22 +272,22 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection
-\label{additional}
+%\phantomsection
+%\label{additional}
 
-\def\additional{\ifEst{T\"aiendav info}\ifEng{Additional info}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[additional]{\additional}}{\additional}}
+%\def\additional{\ifEst{T\"aiendav info}\ifEng{Additional info}}
+%\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[additional]{\additional}}{\additional}}
 
-\noindent\begin{minipage}{\textwidth}
-	{\large\textbf{\additional:}}
-	\vspace{0.2cm}
+%\noindent\begin{minipage}{\textwidth}
+%	{\large\textbf{\additional:}}
+%	\vspace{0.2cm}
 	
-	\begin{tabular}{p{\veerg}p{12cm}}
+%	\begin{tabular}{p{\veerg}p{12cm}}
 %	\auto \\[0.1cm]
 	%
 %	\vabatahtlik	
-	\end{tabular}
-\end{minipage}
+%	\end{tabular}
+%\end{minipage}
 
 \vspace{1.2cm}
 
@@ -339,8 +344,18 @@
 \phantomsection
 \label{talks}
 
-\def\talks{\ifEst{Suulised ettekanded}\ifEng{Oral presentations}}
-\addcontentsline{toc}{subsection}{\texorpdfstring{\hyperref[talks]{\talks}}{\talks}}
+\def\talks{%
+	\ifEst{Suulised ettekanded}%
+	\ifEng{Oral presentations}%
+}
+
+\addcontentsline{toc}{subsection}{% 
+	\texorpdfstring{%
+	\hyperref[talks]{\talks}%
+	}{%
+	\talks%
+	}% 
+}
 
 \noindent{\large{\textbf{\talks}}}
 
@@ -350,8 +365,12 @@
 
 \fontsize{12}{12}\selectfont
 	
-	\forloop{loop}{\ettekanneteArv}{\value{loop}>0}{%
-		\kuvaEttekanne{\arabic{loop}}%
+	\forloop%
+		{loop}%
+		{\ettekanneteArv}%
+		{\value{loop}>0}{%
+		\kuvaEttekanne{\arabic{loop}%
+		}%
 		\addtocounter{loop}{-2}%
 		\vspace{0.2cm}%
 	}
@@ -464,7 +483,7 @@
 \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
 \phantomsection 
 
-\hypertarget{Reinik}{}
+\label{Reinik}
 
 \ifEst{{\large\textbf{Tartu Mart Reiniku G\"umnaasium\\ }}}\ifEng{{\large\textbf{Tartu Mart Reiniku G\"umnaasium\\ }}}
 
@@ -486,7 +505,7 @@
 \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
 \phantomsection 
 
-\hypertarget{Treffner}{}
+\label{Treffner}
 
 \ifEst{{\large\textbf{Tartu linna Hugo Treffneri \\G\"umnaasium}}}\ifEng{{\large\textbf{Tartu linna Hugo Treffneri \\G\"umnaasium}}}
 
@@ -508,7 +527,7 @@
 \begin{minipage}[b][2.5cm][t]{0.5\textwidth}
 	\phantomsection 
 	
-	\hypertarget{UT}{}
+	\label{UT}
 	
 	\ifEst{{\large\textbf{Tartu \"Ulikool, f\"u\"usika instituut}}}\ifEng{{\large\textbf{University of Tartu, Institute of Physics}}}
 	
@@ -526,8 +545,7 @@
 %
 \begin{minipage}[b][2.5cm][t]{0.5\textwidth}
 	\phantomsection 
-	
-	\hypertarget{Eller}{}
+	\label{Eller}
 	
 	\ifEst{{\large\textbf{Heino Elleri nimeline Tartu\\ Muusikakool}}}\ifEng{{\large\textbf{Heino Elleri nimeline Tartu\\ Muusikakool}}}
 	
