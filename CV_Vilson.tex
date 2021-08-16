@@ -61,6 +61,7 @@
 \include{Jaotused/Keeled}
 \include{Jaotused/Arvutioskus}
 \include{Jaotused/Programmeerimine}
+\include{Jaotused/Tehnoloogiad}
 \include{Jaotused/Lisaks}
 \include{Jaotused/Teaduslik/Profiilid}
 \include{Jaotused/Teaduslik/Artiklid}
@@ -292,6 +293,27 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{programmingTechnologies}
+	
+	\def\programmingTechnologies{\ifEst{Tehnoloogiad}\ifEng{Technologies}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[programmingTechnologies]{\programmingTechnologies}}{\programmingTechnologies}}
+	
+	{\large\textbf{\programmingTechnologies:}}
+	\vspace{0.2cm}
+	
+	\begin{tabular}{p{\veerg}l}
+		\technologiesDaily \\
+		%
+		\technologiesOccasionally
+	\end{tabular} 
+\end{minipage}
+
+% \vspace{0.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %\noindent\begin{minipage}{\textwidth}
 %	\phantomsection
 %	\label{additional}
@@ -323,6 +345,8 @@
 \vspace{0.3cm}
 
 \profiilid
+
+\end{document}
 
 \vspace{0.5cm}
 
