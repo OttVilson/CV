@@ -89,13 +89,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection
-\label{personal}
-
-\def\personal{\ifEst{Isiklik informatsioon}\ifEng{Personal information}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[personal]{\personal}}{\personal}}
-
 \noindent\begin{minipage}[b]{0.6\textwidth}
+	\phantomsection
+	\label{personal}
+	
+	\def\personal{\ifEst{Isiklik informatsioon}\ifEng{Personal information}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[personal]{\personal}}{\personal}}
+	
 	{\large\textbf{\personal:}}
 	\vspace{0.2cm}
 	
@@ -125,13 +125,13 @@
 
 \vspace{0.7cm}
 
-\phantomsection 
-\label{education}
-
-\def\education{\ifEst{Haridusk\"aik}\ifEng{Education}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[education]{\education}}{\education}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection 
+	\label{education}
+	
+	\def\education{\ifEst{Haridusk\"aik}\ifEng{Education}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[education]{\education}}{\education}}
+	
 	{\large\textbf{\education:}}
 	\vspace{0.2cm}
 	
@@ -155,17 +155,19 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection
-\label{furtherEducation}
-
-\def\furthereducation{\ifEst{T\"aiendkoolitus}\ifEng{Further education}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[furtherEducation]{\furthereducation}}{\furthereducation}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{furtherEducation}
+	
+	\def\furthereducation{\ifEst{T\"aiendkoolitus}\ifEng{Further education}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[furtherEducation]{\furthereducation}}{\furthereducation}}
+	
 	{\large\textbf{\furthereducation:}}
 	\vspace{0.2cm}
 	
-	\begin{tabular}{p{\veerg}p{\sisuveerg}}
+	\begin{tabular}{p{\veerg}l}
+		\ntduks \\
+		%
 		\testconuks \\
 		%
 		\courseraseitse \\
@@ -194,12 +196,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection \hypertarget{work}{}
-
-\def\work{\ifEst{T\"o\"okogemus}\ifEng{Work experience}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[work]{\work}}{\work}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{work}
+	
+	\def\work{\ifEst{T\"o\"okogemus}\ifEng{Work experience}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[work]{\work}}{\work}}
+	
 	{\large\textbf{\work:}}
 	\vspace{0.2cm}
 	
@@ -224,13 +227,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection
-\label{languages}
-
-\def\languages{\ifEst{Keelteoskus}\ifEng{Languages}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[languages]{\languages}}{\languages}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{languages}
+	
+	\def\languages{\ifEst{Keelteoskus}\ifEng{Languages}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[languages]{\languages}}{\languages}}
+	
 	{\large\textbf{\languages:}}
 	\vspace{0.2cm}
 	
@@ -247,12 +250,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection \hypertarget{computer}{}
-
-\def\computer{\ifEst{Arvutioskus}\ifEng{Computer usage}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[computer]{\computer}}{\computer}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{computer}
+	
+	\def\computer{\ifEst{Arvutioskus}\ifEng{Computer usage}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[computer]{\computer}}{\computer}}
+	
 	{\large\textbf{\computer:}}
 	\vspace{0.2cm}
 	
@@ -267,34 +271,34 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection
-\label{programmingLanguages}
-
-\def\programmingLanguages{\ifEst{Programmeerimiskeeled}\ifEng{Programming languages}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[programmingLanguages]{\programmingLanguages}}{\programmingLanguages}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{programmingLanguages}
+	
+	\def\programmingLanguages{\ifEst{Programmeerimiskeeled}\ifEng{Programming languages}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[programmingLanguages]{\programmingLanguages}}{\programmingLanguages}}
+	
 	{\large\textbf{\programmingLanguages:}}
 	\vspace{0.2cm}
 
 	\begin{tabular}{p{\veerg}l}
-	\kesktase \\
-	%
-	\algtase
-\end{tabular} 
+		\kesktase \\
+		%
+		\algtase
+	\end{tabular} 
 \end{minipage}
 
 \vspace{0.4cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\phantomsection
-%\label{additional}
-
-%\def\additional{\ifEst{T\"aiendav info}\ifEng{Additional info}}
-%\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[additional]{\additional}}{\additional}}
-
 %\noindent\begin{minipage}{\textwidth}
+%	\phantomsection
+%	\label{additional}
+
+%	\def\additional{\ifEst{T\"aiendav info}\ifEng{Additional info}}
+%	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[additional]{\additional}}{\additional}}
+
 %	{\large\textbf{\additional:}}
 %	\vspace{0.2cm}
 	
