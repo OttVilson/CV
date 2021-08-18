@@ -14,6 +14,7 @@
 \usepackage{amsmath,fixmath,bm,mathtools,esint,eufrak,graphicx,multicol}
 \usepackage{xcolor}
 \usepackage{xargs} % https://tex.stackexchange.com/questions/29973/more-than-one-optional-argument-for-newcommand
+\usepackage{enumitem} % https://tex.stackexchange.com/questions/242121/how-to-keep-a-constant-baselineskip-when-using-minipages-in-tables
 
 
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref} % ocgcolorlinks,
@@ -61,6 +62,7 @@
 \include{Jaotused/Keeled}
 \include{Jaotused/Arvutioskus}
 \include{Jaotused/Programmeerimine}
+\include{Jaotused/Tehnoloogiad}
 \include{Jaotused/Lisaks}
 \include{Jaotused/Teaduslik/Profiilid}
 \include{Jaotused/Teaduslik/Artiklid}
@@ -89,13 +91,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection
-\label{personal}
-
-\def\personal{\ifEst{Isiklik informatsioon}\ifEng{Personal information}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[personal]{\personal}}{\personal}}
-
 \noindent\begin{minipage}[b]{0.6\textwidth}
+	\phantomsection
+	\label{personal}
+	
+	\def\personal{\ifEst{Isiklik informatsioon}\ifEng{Personal information}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[personal]{\personal}}{\personal}}
+	
 	{\large\textbf{\personal:}}
 	\vspace{0.2cm}
 	
@@ -106,7 +108,7 @@
 		\telefon \\
 		\email \\
 		\skype \\
-%		\linkedin \\
+		\linkedin \\
 %		\twitter \\
 		\codePen \\
 		\gitHub
@@ -118,20 +120,20 @@
 \end{minipage}%
 %
 \begin{minipage}[b]{0.32\textwidth}
-	\hfill\includegraphics[scale=1]{Ott_Vilson}
+	\hfill\includegraphics[scale=0.37]{Ott_Vilson_2021}
 \end{minipage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \vspace{0.7cm}
 
-\phantomsection 
-\label{education}
-
-\def\education{\ifEst{Haridusk\"aik}\ifEng{Education}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[education]{\education}}{\education}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection 
+	\label{education}
+	
+	\def\education{\ifEst{Haridusk\"aik}\ifEng{Education}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[education]{\education}}{\education}}
+	
 	{\large\textbf{\education:}}
 	\vspace{0.2cm}
 	
@@ -155,17 +157,25 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection
-\label{furtherEducation}
-
-\def\furthereducation{\ifEst{T\"aiendkoolitus}\ifEng{Further education}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[furtherEducation]{\furthereducation}}{\furthereducation}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{furtherEducation}
+	
+	\def\furthereducation{\ifEst{T\"aiendkoolitus}\ifEng{Further education}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[furtherEducation]{\furthereducation}}{\furthereducation}}
+	
 	{\large\textbf{\furthereducation:}}
 	\vspace{0.2cm}
 	
 	\begin{tabular}{p{\veerg}l}
+		\ntduks \\
+		%
+		\testconuks \\
+		%
+		\courseraseitse \\
+		%
+		\courserakuus \\
+		%
 		\courseraspetsialisatsioonuks \\
 		%
 	%	\courseraviis \\
@@ -188,16 +198,19 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection \hypertarget{work}{}
-
-\def\work{\ifEst{T\"o\"okogemus}\ifEng{Work experience}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[work]{\work}}{\work}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{work}
+	
+	\def\work{\ifEst{T\"o\"okogemus}\ifEng{Work experience}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[work]{\work}}{\work}}
+	
 	{\large\textbf{\work:}}
 	\vspace{0.2cm}
 	
 	\begin{tabular}{p{\veerg}l}
+		\Playtech \\
+		%
 		\Viking \\
 		%
 		\UTuks \\
@@ -216,13 +229,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection
-\label{languages}
-
-\def\languages{\ifEst{Keelteoskus}\ifEng{Languages}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[languages]{\languages}}{\languages}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{languages}
+	
+	\def\languages{\ifEst{Keelteoskus}\ifEng{Languages}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[languages]{\languages}}{\languages}}
+	
 	{\large\textbf{\languages:}}
 	\vspace{0.2cm}
 	
@@ -239,17 +252,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection \hypertarget{computer}{}
-
-\def\computer{\ifEst{Arvutioskus}\ifEng{Computer usage}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[computer]{\computer}}{\computer}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{computer}
+	
+	\def\computer{\ifEst{Arvutiprogrammid, mida kasutan}\ifEng{Computer programs I use}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[computer]{\computer}}{\computer}}
+	
 	{\large\textbf{\computer:}}
 	\vspace{0.2cm}
 	
 	\begin{tabular}{p{\veerg}l}
-		\igapaevaselt \\[0.1cm]
+		\igapaevaselt \\[3\joontevahe]
 		%
 		\kasutan
 	\end{tabular}
@@ -259,34 +273,86 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\phantomsection
-\label{programmingLanguages}
-
-\def\programmingLanguages{\ifEst{Programmeerimiskeeled}\ifEng{Programming languages}}
-\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[programmingLanguages]{\programmingLanguages}}{\programmingLanguages}}
-
 \noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{programmingLanguages}
+	
+	\def\programmingLanguages{\ifEst{Programmeerimiskeeled}\ifEng{Programming languages}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[programmingLanguages]{\programmingLanguages}}{\programmingLanguages}}
+	
 	{\large\textbf{\programmingLanguages:}}
 	\vspace{0.2cm}
 
 	\begin{tabular}{p{\veerg}l}
-	\kesktase \\
-	%
-	\algtase
-\end{tabular} 
+		\kesktase \\
+		%
+		\algtase
+	\end{tabular} 
 \end{minipage}
 
 \vspace{0.4cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\phantomsection
-%\label{additional}
+\noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{programmingTechnologies}
+	
+	\def\programmingTechnologies{\ifEst{Tehnoloogiad ja formaadid}\ifEng{Technologies and formats}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[programmingTechnologies]{\programmingTechnologies}}{\programmingTechnologies}}
+	
+	{\large\textbf{\programmingTechnologies:}}
+	\vspace{0.2cm}
+	
+	\begin{tabular}{p{\veerg}l}
+		\technologiesDaily \\
+		%
+		\technologiesOccasionally
+	\end{tabular} 
+\end{minipage}
 
-%\def\additional{\ifEst{T\"aiendav info}\ifEng{Additional info}}
-%\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[additional]{\additional}}{\additional}}
+\vspace{0.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\begin{minipage}{\textwidth}
+	\phantomsection
+	\label{books}
+	
+	\def\books{\ifEst{Raamatud, mida olen lugenud tervikuna v\~oi osaliselt}\ifEng{Books I have read completely or partially}}
+	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[books]{\books}}{\books}}
+	
+	{\large\textbf{\books:}}
+	\vspace{0.2cm}
+	
+	\begin{itemize}[nosep]
+		\item Robert C. Martin ``Clean Architecture''
+		
+		\item Robert C. Martin ``Clean Coder''
+		
+		\item Joshua Bloch  ``Effective Java''
+		
+		\item Matthew Morris ``Oracle certification prep''
+		
+		\item Cem Kaner, James Bach, Bret Pettichord ``Lessons learned in software testing''
+		
+		\item Torbj\"orn Ryber ``Essential software test design''
+		
+		\item Gerald M. Weinberg ``Perfect Software and other illusions about testing
+	\end{itemize}
+\end{minipage}
+
+% \vspace{0.4cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\noindent\begin{minipage}{\textwidth}
+%	\phantomsection
+%	\label{additional}
+
+%	\def\additional{\ifEst{T\"aiendav info}\ifEng{Additional info}}
+%	\addcontentsline{toc}{section}{\texorpdfstring{\hyperref[additional]{\additional}}{\additional}}
+
 %	{\large\textbf{\additional:}}
 %	\vspace{0.2cm}
 	
@@ -311,6 +377,8 @@
 \vspace{0.3cm}
 
 \profiilid
+
+\end{document}
 
 \vspace{0.5cm}
 

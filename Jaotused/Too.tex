@@ -62,3 +62,37 @@
 	\ifEng{Viking Security -- stock-taker}	
 }
 
+\newcommand\Playtech{
+	\makebox[0.5cm]{}%
+	2019\,--\,2021
+	&
+	%	
+	\begin{minipage}[t]{\sisuveerg}
+		\ifEst{Playtech Estonia O\"U -- kvaliteeditagamise insener \\
+		Detailid: manuaalne graafilise kasutajaliikme ja API testimine veebirakendustes h\~olmates muude tegevuste seas
+		\begin{itemize}[nosep]
+			\item curl-iga saadetud API päringu vastuse küljendamine jq-ga ning tööriista diff abil saadud tulemuse v\~ordlemine andmebaasist eksporditud andmetega
+			
+			\item rekursiivsete \textit{common table expression}-ite kasutamine SQL-is BLOB \mbox{v\"aljal} hoitava pildi baas64-enkodeerimiseks l\"abi kuni 2000 baidi suuruse andmet\"u\"ubi \textit{raw} 
+			
+			\item Bashi skripti kirjutamine ldif faili genereerimine ldapmodify tarvis
+			
+			\item koodi \"ulevaatamine
+		\end{itemize}
+		}%
+		\ifEng{Playtech Estonia O\"U -- Quality Assurance Engineer	\\
+		Details: manual GUI and API testing of web applications including but not limited to:
+		\begin{itemize}[nosep]
+			\item using curl to send API request, formatting the response with jq, and using diff tool to compare the result with data exported from database
+			
+			\item using recursive common table expressions in SQL to base64 encode \mbox{picture} held in BLOB through up to 2000 bytes raw datatype
+			
+			\item writing Bash script for generating ldif file for ldapmodify
+			
+			\item code review
+		\end{itemize}
+		}%
+
+		\vspace{0.1cm}
+	\end{minipage}
+}
